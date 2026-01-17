@@ -78,7 +78,9 @@
 
   #if ASYNC_TCP_SSL_ENABLED
     #include <AsyncTCP_SSL.h>
-    #warning ESP32 ASYNC_TCP_SSL_ENABLED
+    #if (_ASYNC_MQTT_LOGLEVEL_ > 3)
+      #warning ESP32 ASYNC_TCP_SSL_ENABLED
+    #endif
   #else
     #include <AsyncTCP.h>
   #endif
